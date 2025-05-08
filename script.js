@@ -1,30 +1,128 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the scroll indicator
-    const scrollIndicator = document.getElementById('scrollIndicator');
-    let scrollTimeout;
+    // Create day navigation
+    const dayCards = document.querySelectorAll('.day-card');
+    const dayNav = document.createElement('div');
+    dayNav.className = 'day-navigation';
     
-    window.addEventListener('scroll', function() {
-        // Throttle scroll updates for better performance
-        if (!scrollTimeout) {
-            scrollTimeout = setTimeout(() => {
-                // Update scroll indicator width
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                scrollIndicator.style.width = scrolled + '%';
-                
-                // Add shadow to header on scroll
-                const header = document.querySelector('header');
-                if (winScroll > 10) {
-                    header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-                } else {
-                    header.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.1)';
-                }
-                
-                scrollTimeout = null;
-            }, 16); // Approximately 60fps
-        }
+    dayCards.forEach((card, index) => {
+        const button = document.createElement('button');
+        button.className = 'day-nav-button';
+        button.textContent = `Day ${index + 1}`;
+        button.setAttribute('title', card.querySelector('.day-date').textContent);
+        button.setAttribute('data-target', card.id);
+        button.addEventListener('click', () => {
+            card.scrollIntoView({ behavior: 'smooth' });
+            updateActiveButton(button);
+        });
+        dayNav.appendChild(button);
     });
+    
+    document.querySelector('header .container').appendChild(dayNav);
+    
+    // Update active button on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const index = Array.from(dayCards).indexOf(entry.target);
+                const buttons = document.querySelectorAll('.day-nav-button');
+                updateActiveButton(buttons[index]);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    dayCards.forEach(card => observer.observe(card));
+    
+    // Update scroll indicator
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    window.addEventListener('scroll', () => {
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        scrollIndicator.style.width = `${scrollPercent}%`;
+    });
+    
+    // Helper function to update active button
+    function updateActiveButton(activeButton) {
+        document.querySelectorAll('.day-nav-button').forEach(button => {
+            button.classList.remove('active');
+        });
+        activeButton.classList.add('active');
+    }
+    
+    // Add current day highlighting
+    const today = new Date();
+    const startDate = new Date('2024-05-15');
+    const endDate = new Date('2024-05-22');
+    
+    if (today >= startDate && today <= endDate) {
+        const dayDiff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+        if (dayDiff >= 0 && dayDiff < dayCards.length) {
+            dayCards[dayDiff].classList.add('current-day');
+            document.querySelectorAll('.day-nav-button')[dayDiff].classList.add('current');
+        }
+    }
+
+    // Add language switcher
+    const languageSwitcher = document.createElement('div');
+    languageSwitcher.className = 'language-switcher';
+    languageSwitcher.innerHTML = `
+        <button class="lang-btn" data-lang="en">English</button>
+        <button class="lang-btn active" data-lang="zh">中文</button>
+    `;
+    document.querySelector('header .container').appendChild(languageSwitcher);
+
+    // Set initial language state
+    document.body.setAttribute('data-lang', 'zh');
+    const zhContents = document.querySelectorAll('.zh-content');
+    zhContents.forEach(content => {
+        content.style.display = 'block';
+    });
+    const eventDetails = document.querySelectorAll('.event-details');
+    eventDetails.forEach(detail => {
+        const paragraphs = detail.querySelectorAll('p:not(.zh-content p)');
+        paragraphs.forEach(p => {
+            p.style.display = 'none';
+        });
+    });
+
+    // Language switching functionality
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            langButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const lang = btn.getAttribute('data-lang');
+            document.body.setAttribute('data-lang', lang);
+            
+            // Show/hide Chinese content
+            const zhContents = document.querySelectorAll('.zh-content');
+            zhContents.forEach(content => {
+                content.style.display = lang === 'zh' ? 'block' : 'none';
+            });
+            
+            // Hide English content when Chinese is selected
+            const eventDetails = document.querySelectorAll('.event-details');
+            eventDetails.forEach(detail => {
+                const paragraphs = detail.querySelectorAll('p:not(.zh-content p)');
+                paragraphs.forEach(p => {
+                    p.style.display = lang === 'zh' ? 'none' : 'block';
+                });
+            });
+        });
+    });
+
+    // Add touch event listeners for mobile
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('.event-details').forEach(detail => {
+            detail.addEventListener('touchstart', function() {
+                this.classList.add('touch-active');
+            });
+            
+            detail.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('touch-active');
+                }, 150);
+            });
+        });
+    }
 
     // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -58,135 +156,4 @@ document.addEventListener('DOMContentLoaded', function() {
             // This could be expanded to include analytics tracking
         });
     });
-
-    // Add day selector navigation with improved UI
-    const createDaySelector = () => {
-        const dayCards = document.querySelectorAll('.day-card');
-        if (dayCards.length <= 1) return;
-
-        const navContainer = document.createElement('div');
-        navContainer.className = 'day-navigation';
-        
-        dayCards.forEach((card, index) => {
-            const dayNum = index + 1;
-            const dayHeader = card.querySelector('.day-header');
-            const dayTitle = dayHeader.querySelector('.day-date').textContent;
-            
-            const button = document.createElement('button');
-            button.innerText = `Day ${dayNum}`;
-            button.setAttribute('title', dayTitle);
-            button.className = 'day-nav-button';
-            button.setAttribute('data-target', card.id);
-            
-            button.addEventListener('click', () => {
-                // Scroll to the day card
-                window.scrollTo({
-                    top: card.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Update active button
-                document.querySelectorAll('.day-nav-button').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                button.classList.add('active');
-                
-                // Add animation to highlight the card
-                card.style.transform = 'translateY(-5px)';
-                setTimeout(() => {
-                    card.style.transform = '';
-                }, 500);
-            });
-            
-            navContainer.appendChild(button);
-        });
-        
-        // Add sticky navigation to header
-        const header = document.querySelector('header .container');
-        header.appendChild(navContainer);
-        
-        // Set first day as active by default
-        const firstButton = navContainer.querySelector('.day-nav-button');
-        if (firstButton) firstButton.classList.add('active');
-        
-        // Implement scroll spy with improved performance
-        let scrollSpyTimeout;
-        window.addEventListener('scroll', () => {
-            if (!scrollSpyTimeout) {
-                scrollSpyTimeout = setTimeout(() => {
-                    let currentDay = '';
-                    const scrollPosition = window.scrollY + 150; // Offset for header
-                    
-                    dayCards.forEach(card => {
-                        if (card.offsetTop <= scrollPosition) {
-                            currentDay = card.id;
-                        }
-                    });
-                    
-                    if (currentDay) {
-                        document.querySelectorAll('.day-nav-button').forEach(btn => {
-                            btn.classList.remove('active');
-                            if (btn.getAttribute('data-target') === currentDay) {
-                                btn.classList.add('active');
-                            }
-                        });
-                    }
-                    
-                    scrollSpyTimeout = null;
-                }, 100);
-            }
-        });
-    };
-    
-    // Call the day selector function
-    createDaySelector();
-
-    // Add current day highlight if applicable
-    const highlightCurrentDay = () => {
-        const today = new Date();
-        const month = today.getMonth() + 1; // JS months are 0-indexed
-        const day = today.getDate();
-        
-        // Only run during May 9-14, 2025
-        if (today.getFullYear() === 2025 && month === 5 && day >= 9 && day <= 14) {
-            const dayIndex = day - 9; // Convert to 0-based index
-            const dayCards = document.querySelectorAll('.day-card');
-            
-            if (dayCards[dayIndex]) {
-                dayCards[dayIndex].classList.add('current-day');
-                
-                // Also highlight the navigation button
-                const navButtons = document.querySelectorAll('.day-nav-button');
-                if (navButtons[dayIndex]) {
-                    navButtons[dayIndex].classList.add('current');
-                }
-                
-                // Auto-scroll to current day
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: dayCards[dayIndex].offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }, 500);
-            }
-        }
-    };
-    
-    // Add event listeners for better mobile experience
-    if ('ontouchstart' in window) {
-        document.querySelectorAll('.event-details').forEach(detail => {
-            detail.addEventListener('touchstart', function() {
-                this.classList.add('touch-active');
-            });
-            
-            detail.addEventListener('touchend', function() {
-                setTimeout(() => {
-                    this.classList.remove('touch-active');
-                }, 150);
-            });
-        });
-    }
-    
-    // Call the highlight function
-    highlightCurrentDay();
 }); 

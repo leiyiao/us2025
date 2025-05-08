@@ -1,41 +1,50 @@
-# 2025 California Trip Itinerary Website
+# US 2024 Trip Itinerary
 
-A responsive web-based travel itinerary for a Stanford University trip to California in May 2025.
+A bilingual (English/Chinese) travel itinerary website for a trip to the Northeastern United States in May 2024.
 
 ## Features
 
-- **Day-by-Day Itinerary**: Detailed schedule for each day of the trip
-- **Interactive Timeline**: Visual representation of activities for each day
-- **Apple Maps Integration**: Direct links to navigation for each location
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Google Material Design**: Clean, modern UI following Google's design language
+- Bilingual support (English/Chinese)
+- Responsive design
+- Interactive day navigation
+- Current day highlighting
+- Detailed travel information
+- Location-based icons
+- Smooth scrolling
+- Mobile-friendly interface
 
-## How to View the Website
+## Technologies Used
 
-1. Simply open the `index.html` file in any modern web browser.
-2. No server or special setup required.
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Google Material Icons
+- Google Fonts
 
-## Navigation
+## Setup
 
-- Use the day navigation buttons at the top to quickly jump to different days
-- Click on the "Directions" buttons to open Apple Maps with the location pre-filled
-- On mobile, the day navigation scrolls horizontally
+1. Clone the repository:
+```bash
+git clone https://github.com/leiyiao/us2025.git
+cd us2025
+```
 
-## File Structure
+2. Open `index.html` in your web browser or use a local server:
+```bash
+# Using Python
+python -m http.server 8000
 
-- `index.html` - Main HTML content
-- `styles.css` - All styling using CSS
-- `script.js` - JavaScript for interactive features
+# Using Node.js
+npx serve
+```
 
-## Trip Summary
+## Usage
 
-- **Dates**: May 9-14, 2025
-- **Starting/Ending Point**: Stanford University
-- **Flight Details**: 
-  - Outbound: Newark (EWR) to San Francisco (SFO) on Alaska AS293
-  - Return: SFO to New York on Alaska AS59
-- **Highlights**: Golden Gate Bridge, Muir Woods, Filoli Garden, UC Berkeley, Apple Park, and more
+- Click on day navigation buttons to jump to specific days
+- Use the language switcher to toggle between English and Chinese
+- Click on location icons to view more details
+- Scroll through the timeline to view all events
 
-## Credits
+## License
 
-Created with love for your California adventure. Safe travels! 
+MIT License 
