@@ -502,22 +502,44 @@ main.container {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    margin-bottom: 0;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  header {
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  header .container {
+    gap: var(--spacing-xs);
+  }
+
+  .language-switcher {
+    margin-bottom: var(--spacing-xs);
+    padding: 4px;
+  }
+
+  .lang-btn {
+    padding: 4px 12px;
+    font-size: 0.85rem;
   }
 
   .day-header {
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     text-align: center;
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
   }
 
   .day-date {
     align-self: center;
+    padding: 4px 12px;
+    font-size: 0.9rem;
   }
 
   .event {
