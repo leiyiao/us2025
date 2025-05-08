@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Sans SC', sans-serif;
   background-color: var(--background-color);
   color: var(--text-primary);
   line-height: 1.6;
@@ -50,8 +50,8 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Google Sans', 'Roboto', sans-serif;
-  font-weight: 500;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -65,12 +65,14 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 900;
 }
 
 h2 {
   font-size: 1.8rem;
   color: var(--text-primary);
   margin-bottom: var(--spacing-md);
+  font-weight: 700;
 }
 
 h3 {
@@ -79,6 +81,7 @@ h3 {
   display: flex;
   align-items: center;
   margin-bottom: var(--spacing-sm);
+  font-weight: 600;
 }
 
 p {
@@ -86,6 +89,7 @@ p {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  font-weight: 400;
 }
 
 .subtitle {
@@ -93,6 +97,7 @@ p {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-sm);
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 /* Header and Footer */
@@ -164,12 +169,13 @@ header .container {
 /* Chinese text styles */
 [data-lang="zh"] .event-details p,
 [data-lang="zh"] .event-details h3 {
-  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Noto Sans SC', sans-serif;
 }
 
 [data-lang="zh"] .event-details p {
   font-size: 0.95rem;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 footer {
@@ -226,7 +232,7 @@ footer {
 
 /* Chinese text styles */
 [data-lang="zh"] .day-nav-button {
-  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Noto Sans SC', sans-serif;
 }
 
 /* Day Cards */
@@ -504,10 +510,12 @@ main.container {
   h1 {
     font-size: 1.6rem;
     margin-bottom: 0;
+    font-weight: 900;
   }
 
   h2 {
     font-size: 1.3rem;
+    font-weight: 700;
   }
 
   header {
@@ -653,11 +661,13 @@ header {
 }
 
 [data-lang="zh"] h1 {
-    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
 }
 
 [data-lang="zh"] .subtitle {
-    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 500;
 }
 
 /* Fireworks Overlay */
