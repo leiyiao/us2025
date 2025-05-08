@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-fetch": "^2.7.0"
+  },
+  "name": "personal-site",
+  "description": "A responsive web-based travel itinerary for a Stanford University trip to California in May 2025.",
+  "version": "1.0.0",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

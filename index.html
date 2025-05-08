@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Trip 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <header>
+        <div class="container">
+            <h1>2025 California Trip Itinerary</h1>
+            <p class="subtitle">Stanford University • May 9-14, 2025</p>
+            <!-- Day navigation will be inserted here by JavaScript -->
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="day-card" id="day1">
+            <div class="day-header">
+                <h2>Day 1 - Friday, May 9</h2>
+                <div class="day-date">Travel Day</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">7:29 PM EDT</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">flight_takeoff</span>Depart Newark (EWR)</h3>
+                        <p>Alaska Airlines Flight AS293</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">2:02 AM PDT (May 10)</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">flight_land</span>Arrive San Francisco (SFO)</h3>
+                        <p>Drive to Stanford University: ~30-40 minutes (20 miles) via U.S.-101</p>
+                        <a href="https://maps.apple.com/?daddr=Stanford+University,+450+Serra+Mall,+Stanford,+CA+94305&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions to Stanford
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-card" id="day2">
+            <div class="day-header">
+                <h2>Day 2 - Saturday, May 10</h2>
+                <div class="day-date">Garden & Coast</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">Start</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">school</span>Stanford University</h3>
+                        <p>Beginning point of the day</p>
+                        <p>Relax after travel and prepare for the day's explorations</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Morning</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">park</span>Filoli Garden</h3>
+                        <p>Drive: 30 mins (20 km) from Stanford</p>
+                        <p>Historic house and beautiful gardens</p>
+                        <p>Hours: 10:00 AM – 5:00 PM daily | Admission: ~$25/adult</p>
+                        <p>Spend 1–2 hours touring the manor and gardens</p>
+                        <a href="https://maps.apple.com/?daddr=Filoli,+86+Cañada+Road,+Woodside,+CA+94062&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">beach_access</span>Half Moon Bay</h3>
+                        <p>Drive: 20 mins (18 km) from Filoli</p>
+                        <p>Scenic coastal town with beaches and shops</p>
+                        <p>Recommended: Lunch at Half Moon Bay Brewing Co. or Sam's Chowder House</p>
+                        <p>Bring a jacket - it's breezy!</p>
+                        <a href="https://maps.apple.com/?daddr=Half+Moon+Bay,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Late Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">bridge</span>Golden Gate Bridge</h3>
+                        <p>Drive: 50 mins (46 km) from Half Moon Bay</p>
+                        <p>Iconic San Francisco landmark</p>
+                        <p>Scenic overlook on north side (free, open 24/7)</p>
+                        <p>Great photo opportunity</p>
+                        <a href="https://maps.apple.com/?daddr=Golden+Gate+Bridge,+San+Francisco,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Alternative</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">lightbulb</span>Pigeon Point Light Station</h3>
+                        <p>Drive: 40 mins (34 km) from Stanford</p>
+                        <p>Historic lighthouse (Open 10:00-16:00)</p>
+                        <p>Walk the bluff and visit the lightstation (free)</p>
+                        <p>Stop at the famous Pescadero Pie Stand en route</p>
+                        <a href="https://maps.apple.com/?daddr=Pigeon+Point+Light+Station,+Pigeon+Point+Road,+Pescadero,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Evening</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">directions_car</span>Return to Stanford</h3>
+                        <p>Drive: ~60 mins from Golden Gate Bridge</p>
+                        <a href="https://maps.apple.com/?daddr=Stanford+University,+450+Serra+Mall,+Stanford,+CA+94305&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-card" id="day3">
+            <div class="day-header">
+                <h2>Day 3 - Sunday, May 11</h2>
+                <div class="day-date">San Francisco & Marin</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">Start</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">school</span>Stanford University</h3>
+                        <p>Beginning point of the day</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Morning</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">location_city</span>San Francisco City Walk</h3>
+                        <p>Drive: 60 mins (64 km) from Stanford</p>
+                        <p>Explore Golden Gate Park and surrounding areas</p>
+                        <p>Optional: Visit Chinatown shops/restaurants (≈10am–6pm)</p>
+                        <p>Or check out Ferry Building Marketplace (open 7am-8pm)</p>
+                        <a href="https://maps.apple.com/?daddr=Golden+Gate+Park,+San+Francisco,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">sailing</span>Sausalito</h3>
+                        <p>Drive: 15 mins from Golden Gate Bridge</p>
+                        <p>Charming waterfront town with views of San Francisco</p>
+                        <p>Lunch options: Cafés on Bridgeway</p>
+                        <p>Optional short hike or explore art galleries on Bridgeway</p>
+                        <a href="https://maps.apple.com/?daddr=Sausalito,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Late Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">forest</span>Muir Woods</h3>
+                        <p>Drive: 20 mins from Sausalito (80 km, 80 mins total from Stanford)</p>
+                        <p>Ancient redwood forest with hiking trails</p>
+                        <p>Hours: 8:00 AM – 6:00 PM daily</p>
+                        <p>Reservation required for timed entry and parking ($8)</p>
+                        <p>Reserve at www.recreation.gov</p>
+                        <a href="https://maps.apple.com/?daddr=Muir+Woods+National+Monument,+Mill+Valley,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Evening</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">directions_car</span>Return to Stanford</h3>
+                        <p>Drive: ~80 mins from Muir Woods</p>
+                        <a href="https://maps.apple.com/?daddr=Stanford+University,+450+Serra+Mall,+Stanford,+CA+94305&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-card" id="day4">
+            <div class="day-header">
+                <h2>Day 4 - Monday, May 12</h2>
+                <div class="day-date">Stanford Campus Day</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">Morning</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">visibility</span>Hoover Tower</h3>
+                        <p>On Stanford Campus</p>
+                        <p>Observation deck with panoramic views</p>
+                        <p>Hours: 10:00 AM – 4:00 PM daily</p>
+                        <p>Admission: $8 (Stanford affiliates free)</p>
+                        <a href="https://maps.apple.com/?daddr=Hoover+Tower,+Stanford,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Late Morning</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">hiking</span>Dish Hike</h3>
+                        <p>Near Stanford Campus</p>
+                        <p>Popular hiking trail with views of the Bay Area</p>
+                        <p>~3.5 mile loop, open dawn–dusk, free</p>
+                        <p>Pack water/snacks; no food/drink on trail</p>
+                        <a href="https://maps.apple.com/?daddr=Stanford+Dish+Hiking+Trail,+Stanford,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">museum</span>Cantor Center</h3>
+                        <p>On Stanford Campus</p>
+                        <p>Art museum with diverse collections</p>
+                        <p>Hours: Tue–Sun 11:00 AM – 5:00 PM (closed Mon)</p>
+                        <p>Free entry, includes Rodin Sculpture Garden</p>
+                        <a href="https://maps.apple.com/?daddr=Cantor+Arts+Center,+Stanford,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Late Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">waves</span>Baylands Nature Preserve</h3>
+                        <p>Drive: 17 mins (7 km) from Stanford</p>
+                        <p>Marshland with trails and bird watching</p>
+                        <p>Open dawn to dusk, free admission</p>
+                        <p>Great spot for sunset views of the bay</p>
+                        <a href="https://maps.apple.com/?daddr=Baylands+Nature+Preserve,+Palo+Alto,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-card" id="day5">
+            <div class="day-header">
+                <h2>Day 5 - Tuesday, May 13</h2>
+                <div class="day-date">East Bay Exploration</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">Start</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">school</span>Stanford University</h3>
+                        <p>Beginning point of the day</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Morning</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">forest</span>Redwood Regional Park</h3>
+                        <p>Drive: 70 mins (66 km) from Stanford</p>
+                        <p>Beautiful redwood forest with hiking trails</p>
+                        <p>Park open 24 hours, no fee</p>
+                        <p>Spend a couple hours on easy redwood trails</p>
+                        <a href="https://maps.apple.com/?daddr=Redwood+Regional+Park,+Oakland,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">account_balance</span>UC Berkeley</h3>
+                        <p>Drive: 17 mins (11 km) from Redwood Regional Park</p>
+                        <p>Explore the beautiful campus</p>
+                        <p>Lunch options: University Ave eateries</p>
+                        <p>Optional: Visit Lawrence Hall of Science (afternoon hours)</p>
+                        <a href="https://maps.apple.com/?daddr=University+of+California+Berkeley,+Berkeley,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Late Afternoon</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">nature</span>Tilden Regional Park</h3>
+                        <p>Drive: 10 mins (6 km) from UC Berkeley</p>
+                        <p>Scenic park with botanical garden and lake</p>
+                        <p>Open 7:30 AM – 6:00 PM, free admission</p>
+                        <p>Hike to Lake Anza or visit the Botanic Garden</p>
+                        <a href="https://maps.apple.com/?daddr=Tilden+Regional+Park,+Berkeley,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Evening</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">directions_car</span>Return to Stanford</h3>
+                        <p>Drive: ~60 mins from Berkeley</p>
+                        <p>Class: 17:30-20:30</p>
+                        <a href="https://maps.apple.com/?daddr=Stanford+University,+450+Serra+Mall,+Stanford,+CA+94305&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-card" id="day6">
+            <div class="day-header">
+                <h2>Day 6 - Wednesday, May 14</h2>
+                <div class="day-date">Departure Day</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">Start</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">school</span>Stanford University</h3>
+                        <p>Beginning point of the day</p>
+                        <p>At leisure (sleep in, pack, enjoy Stanford area)</p>
+                        <p>Consider one last Stanford campus walk or café lunch</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Morning</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">devices</span>Apple Park</h3>
+                        <p>Drive: 30 mins (23 km) from Stanford</p>
+                        <p>Visit the Apple Park Visitor Center</p>
+                        <p>Note: Exhibits and store only; main campus not accessible</p>
+                        <a href="https://maps.apple.com/?daddr=Apple+Park+Visitor+Center,+Cupertino,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">Evening</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">flight_takeoff</span>Depart from SFO</h3>
+                        <p>Drive: 30-40 mins from Stanford to SFO</p>
+                        <p>Alaska Airlines Flight AS59 at 11:15 PM PDT</p>
+                        <p>Departure time: 9:00 PM (arrive at airport 2+ hours early)</p>
+                        <a href="https://maps.apple.com/?daddr=San+Francisco+International+Airport,+San+Francisco,+CA&dirflg=d" class="maps-button">
+                            <span class="material-icons">directions</span>
+                            Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-time">7:30 AM EDT (May 15)</div>
+                    <div class="event-details">
+                        <h3><span class="material-icons location-icon">flight_land</span>Arrive in New York (JFK/EWR)</h3>
+                        <p>End of trip</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>2025 California Trip Itinerary • Stanford University • May 9-14, 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
