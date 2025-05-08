@@ -5,8 +5,8 @@ A bilingual (English/Chinese) travel itinerary website for a trip to the Northea
 ## Features
 
 - Bilingual support (English/Chinese)
-- Responsive design
 - Interactive day navigation
+- Responsive design
 - Current day highlighting
 - Detailed travel information
 - Location-based icons
@@ -26,24 +26,16 @@ A bilingual (English/Chinese) travel itinerary website for a trip to the Northea
 1. Clone the repository:
 ```bash
 git clone https://github.com/leiyiao/us2025.git
-cd us2025
 ```
 
-2. Open `index.html` in your web browser or use a local server:
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve
-```
+2. Open `index.html` in your web browser
 
 ## Usage
 
-- Click on day navigation buttons to jump to specific days
-- Use the language switcher to toggle between English and Chinese
-- Click on location icons to view more details
-- Scroll through the timeline to view all events
+- Use the day navigation buttons to quickly jump to specific days
+- Toggle between English and Chinese using the language switcher
+- Click on location icons to get directions
+- Scroll through the timeline to view all activities
 
 ## License
 
