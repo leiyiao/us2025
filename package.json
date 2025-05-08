@@ -1,17 +1,29 @@
 {
-  "dependencies": {
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "node-fetch": "^2.7.0"
-  },
-  "name": "personal-site",
-  "description": "A responsive web-based travel itinerary for a Stanford University trip to California in May 2025.",
+  "name": "us2024-trip-itinerary",
   "version": "1.0.0",
-  "main": "chat.js",
+  "description": "Bilingual travel itinerary website for US 2024 trip",
+  "main": "index.html",
   "scripts": {
+    "start": "serve .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leiyiao/us2025.git"
+  },
+  "keywords": [
+    "travel",
+    "itinerary",
+    "bilingual",
+    "responsive"
+  ],
+  "author": "Lei Yiao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leiyiao/us2025/issues"
+  },
+  "homepage": "https://leiyiao.github.io/us2025",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
 }
